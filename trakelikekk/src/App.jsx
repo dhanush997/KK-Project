@@ -1,8 +1,19 @@
-import ComingSoonBanner from './components/ComingSoonBanner';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import MarketStats from './components/MarketStats';
+import Services from './components/Services';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <ComingSoonBanner />
+    <div className="bg-[#0f172a] text-white selection:bg-yellow-500/30">
+      <Navbar />
+      <Hero />
+      <MarketStats />
+      <Services />
+      <Footer />
+    </div>
   );
 }
 
