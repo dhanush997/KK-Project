@@ -13,7 +13,7 @@ const Footer = () => {
                             <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full">
                                 <Rocket className="w-4 h-4 text-white transform -rotate-45" />
                             </div>
-                            <span className="text-xl font-bold text-white">TrakeLike<span className="text-yellow-400">KK</span></span>
+                            <span className="text-xl font-bold text-white">TradeLike<span className="text-yellow-400">KK</span></span>
                         </div>
                         <p className="text-slate-400 leading-relaxed">
                             Empowering traders with precision analytics and expert signals for Delta Exchange and Crypto Futures.
@@ -73,7 +73,7 @@ const Footer = () => {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-500 text-sm">
-                        &copy; {new Date().getFullYear()} Trake Like KK. All rights reserved.
+                        &copy; {new Date().getFullYear()} Trade Like KK. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-sm text-slate-500">
                         <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

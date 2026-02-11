@@ -35,7 +35,7 @@ const Navbar = () => {
                             <Rocket className="w-5 h-5 text-white transform -rotate-45" />
                         </div>
                         <span className="text-xl font-bold text-white tracking-wide">
-                            TrakeLike<span className="text-yellow-400">KK</span>
+                            TradeLike<span className="text-yellow-400">KK</span>
                         </span>
                     </div>
 

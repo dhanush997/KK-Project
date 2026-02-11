@@ -74,7 +74,7 @@ const ComingSoonBanner = () => {
                                 Moon Launch Imminent
                             </span>
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                                Trake Like <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">KK</span>
+                                Trade Like <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">KK</span>
                             </h1>
                             <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
                                 The next generation of crypto-powered tracking and analytics is arriving. Secure your spot on the rocket ship before liftoff.
@@ -144,7 +144,7 @@ const ComingSoonBanner = () => {
 
             {/* Footer */}
             <div className="absolute bottom-6 left-0 w-full text-center text-slate-600 text-sm">
-                &copy; 2026 Trake Like KK. To the Moon. 🚀
+                &copy; 2026 Trade Like KK. To the Moon. 🚀
             </div>
         </div>
     );
