@@ -51,16 +51,52 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Stay Updated</h4>
                         <p className="text-slate-400 mb-4">Get the latest market insights delivered to your inbox.</p>
-                        <form className="space-y-3">
+                        <form
+                            onSubmit={async (e) => {
+                                e.preventDefault();
+                                const name = e.target.elements.name.value;
+                                const email = e.target.elements.email.value;
+                                if (!name || !email) return;
+
+                                const btn = e.target.querySelector('button');
+                                const originalText = btn.innerText;
+                                btn.innerText = "Processing...";
+                                btn.disabled = true;
+
+                                try {
+                                    const { sendRegistrationEmail } = await import('../services/mailService');
+                                    await sendRegistrationEmail({ name, email });
+                                    alert(`Thanks for registering, ${name}! Welcome to the TradeLikeKK family.`);
+                                    e.target.reset();
+                                } catch (error) {
+                                    console.error("Subscription failed:", error);
+                                } finally {
+                                    btn.innerText = originalText;
+                                    btn.disabled = false;
+                                }
+                            }}
+                            className="space-y-3"
+                        >
                             <div className="relative">
                                 <input
+                                    required
+                                    name="name"
+                                    type="text"
+                                    placeholder="Full Name"
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-all placeholder:text-slate-500"
+                                />
+                            </div>
+                            <div className="relative">
+                                <input
+                                    required
+                                    name="email"
                                     type="email"
                                     placeholder="Enter email address"
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500"
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-all placeholder:text-slate-500"
                                 />
                                 <Mail className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 w-4 h-4" />
                             </div>
-                            <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition-colors">
+                            <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-yellow-500/10 active:scale-[0.98]">
                                 Subscribe
                             </button>
                         </form>

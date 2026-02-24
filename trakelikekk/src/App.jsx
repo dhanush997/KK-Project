@@ -5,6 +5,7 @@ import MarketStats from './components/MarketStats';
 import Services from './components/Services';
 import Footer from './components/Footer';
 import WorkshopBanner from './components/WorkshopBanner';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <MarketStats />
       <Services />
       <Footer />
+      <Chatbot />
     </div>
   );
 }
