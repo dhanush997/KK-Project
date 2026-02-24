@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
     secure: true,
-    family: 4, // FORCED IPv4 to fix ENETUNREACH error
+    family: 4,
     auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
@@ -107,11 +107,9 @@ const getEmailTemplate = (name, details, type = 'workshop', isForAdmin = false) 
 app.post('/api/send-email', async (req, res) => {
     const { name, email, serialNo, slot, phone, purpose } = req.body;
 
-    // Auto-detect type
     const type = (serialNo && slot) ? 'workshop' : (phone ? 'chatbot' : 'newsletter');
 
     try {
-        // 1. Admin Notification
         await transporter.sendMail({
             from: `"TradeLikeKK System" <${SMTP_USER}>`,
             to: ADMIN_EMAIL,
@@ -119,7 +117,6 @@ app.post('/api/send-email', async (req, res) => {
             html: getEmailTemplate(name, req.body, type, true)
         });
 
-        // 2. Customer Welcome/Confirmation
         await transporter.sendMail({
             from: `"TradeLikeKK" <${SMTP_USER}>`,
             to: email,

@@ -14,7 +14,7 @@ const ADMIN_EMAIL = "hembram.karunakar@gmail.com";
 const SMTP_USER = "hembram.karunakar@gmail.com";
 const SMTP_PASS = "babi crqo giqj ufyy"; // App Password
 
-// Transporter logic moved inside request for serverless freshness or kept outside for warm starts
+// Transporter with fixed IPv4 and SSL settings
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -33,7 +33,8 @@ const transporter = nodemailer.createTransport({
 });
 
 const getEmailTemplate = (name, details, type = 'workshop', isForAdmin = false) => {
-    const brandColor = "#f59e0b";
+    const brandColor = "#f59e0b"; // Yellow-500
+
     let title, subtitle, detailsHtml, ctaText;
 
     if (type === 'workshop') {
@@ -124,5 +125,4 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
-// For Vercel, we export the app
 export default app;

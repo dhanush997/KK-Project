@@ -4,8 +4,9 @@
  */
 
 // Local & Production API Configuration
-// Using relative path so it works on both localhost and deployed Vercel URL
-const API_URL = "/api/send-email";
+const API_URL = (typeof window !== 'undefined' && window.location.hostname === 'localhost')
+    ? "http://localhost:3001/api/send-email"
+    : "/api/send-email";
 
 /**
  * Generates a unique serial number for registration.
