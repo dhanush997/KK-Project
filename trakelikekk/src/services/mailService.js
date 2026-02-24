@@ -3,8 +3,9 @@
  * Handles registration logic, serial number generation, slot scheduling, and local email API calls.
  */
 
-// Local API Configuration
-const API_URL = "http://localhost:3001/api/send-email";
+// Local & Production API Configuration
+// Using relative path so it works on both localhost and deployed Vercel URL
+const API_URL = "/api/send-email";
 
 /**
  * Generates a unique serial number for registration.
