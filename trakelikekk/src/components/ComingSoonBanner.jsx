@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Clock, ArrowRight, Rocket } from 'lucide-react';
-import RocketCoin from './RocketCoin';
+import { Mail, Clock, ArrowRight, TrendingUp } from 'lucide-react';
 
 const ComingSoonBanner = () => {
     const [timeLeft, setTimeLeft] = useState({
@@ -70,14 +69,14 @@ const ComingSoonBanner = () => {
                             transition={{ delay: 0.3 }}
                         >
                             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm font-bold tracking-wider mb-6 uppercase">
-                                <Rocket className="w-4 h-4" />
-                                Moon Launch Imminent
+                                <TrendingUp className="w-4 h-4" />
+                                Bull Market Precision
                             </span>
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
                                 Trade Like <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">KK</span>
                             </h1>
                             <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                                The next generation of crypto-powered tracking and analytics is arriving. Secure your spot on the rocket ship before liftoff.
+                                The ultimate crypto trading platform is arriving. Harness professional analytics and expert signals.
                             </p>
                         </motion.div>
 
@@ -137,14 +136,24 @@ const ComingSoonBanner = () => {
                         transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
                         className="flex-1 w-full max-w-md mx-auto relative flex justify-center items-center"
                     >
-                        <RocketCoin />
+                        <div className="w-[300px] h-[300px] rounded-full overflow-hidden border-2 border-white/10 shadow-2xl relative">
+                            <img
+                                src="/logo.png"
+                                alt="Logo"
+                                className="w-full h-full object-cover scale-110"
+                                style={{
+                                    maskImage: 'radial-gradient(circle, black 60%, transparent 95%)',
+                                    WebkitMaskImage: 'radial-gradient(circle, black 60%, transparent 95%)'
+                                }}
+                            />
+                        </div>
                     </motion.div>
                 </div>
             </motion.div>
 
             {/* Footer */}
             <div className="absolute bottom-6 left-0 w-full text-center text-slate-600 text-sm">
-                &copy; 2026 Trade Like KK. To the Moon. 🚀
+                &copy; 2026 Trade Like KK. Professional Trading.
             </div>
         </div>
     );

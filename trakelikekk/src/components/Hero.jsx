@@ -1,16 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Shield, BarChart3 } from 'lucide-react';
-import RocketCoin from './RocketCoin';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0f172a]">
-            {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-[30%] -right-[10%] w-[70%] h-[70%] bg-blue-600/20 rounded-full blur-[120px]" />
-                <div className="absolute top-[20%] -left-[10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 w-full h-[150px] bg-gradient-to-t from-[#0f172a] to-transparent z-10" />
+        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            {/* Custom Background Image */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="/hero-bg.png"
+                    alt="Trading Background"
+                    className="w-full h-full object-cover"
+                />
+                {/* Dark Overlay for Legibility & Masking Background Text */}
+                <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-transparent z-10" />
+                <div className="absolute bottom-0 w-full h-[200px] bg-gradient-to-t from-slate-950 to-transparent z-20" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -38,8 +43,8 @@ const Hero = () => {
                                 </span>
                             </h1>
 
-                            <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                Unlock the power of <span className="text-white font-medium">Delta Exchange</span>. Get expert insights, algo-trading strategies, and real-time signals for Bitcoin & Ethereum futures.
+                            <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                                Unlock the power of <span className="text-white font-semibold">Delta Exchange</span>. Get expert insights, algo-trading strategies, and real-time signals for Bitcoin & Ethereum futures.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -47,10 +52,15 @@ const Hero = () => {
                                     Start Trading
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
-                                <button className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white rounded-2xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                                <a
+                                    href="https://www.delta.exchange/app/futures/markets"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white rounded-2xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
+                                >
                                     View Live Market
                                     <TrendingUp className="w-5 h-5 text-green-400" />
-                                </button>
+                                </a>
                             </div>
 
                             <div className="mt-10 flex items-center justify-center lg:justify-start gap-8 text-slate-500 text-sm font-medium">
@@ -66,57 +76,8 @@ const Hero = () => {
                         </motion.div>
                     </div>
 
-                    {/* 3D Visual */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="flex-1 w-full flex justify-center lg:justify-end relative"
-                    >
-                        {/* Decorative circles behind rocket */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border border-white/5 rounded-full animate-spin-slow" style={{ animationDuration: '20s' }} />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-white/5 rounded-full animate-spin-slow" style={{ animationDuration: '30s', animationDirection: 'reverse' }} />
-
-                        <div className="relative z-10 transform hover:scale-105 transition-transform duration-500">
-                            <RocketCoin />
-                        </div>
-
-                        {/* Floating Cards */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-0 right-10 bg-slate-800/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl hidden md:block"
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                                    <span className="text-orange-500 font-bold">₿</span>
-                                </div>
-                                <div>
-                                    <div className="text-xs text-slate-400">Bitcoin Futures</div>
-                                    <div className="text-white font-bold flex items-center gap-1">
-                                        $48,250.00
-                                        <span className="text-green-400 text-xs">+2.4%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            animate={{ y: [0, 10, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-10 left-0 bg-slate-800/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl hidden md:block"
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
-                                    <TrendingUp className="w-5 h-5 text-blue-500" />
-                                </div>
-                                <div>
-                                    <div className="text-xs text-slate-400">Long Signal</div>
-                                    <div className="text-white font-bold">ETH/USD</div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
+                    {/* Right side remains empty to allow the background image's content to shine through */}
+                    <div className="flex-1 w-full" />
 
                 </div>
             </div>

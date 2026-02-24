@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rocket, Twitter, Instagram, Youtube, Linkedin, Mail } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
     return (
@@ -9,12 +10,7 @@ const Footer = () => {
 
                     {/* Brand */}
                     <div className="space-y-6">
-                        <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full">
-                                <Rocket className="w-4 h-4 text-white transform -rotate-45" />
-                            </div>
-                            <span className="text-xl font-bold text-white">TradeLike<span className="text-yellow-400">KK</span></span>
-                        </div>
+                        <Logo className="w-10 h-10" />
                         <p className="text-slate-400 leading-relaxed">
                             Empowering traders with precision analytics and expert signals for Delta Exchange and Crypto Futures.
                         </p>
