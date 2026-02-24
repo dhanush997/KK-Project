@@ -28,6 +28,46 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                         >
+                            {/* Prime Breaking News Scroller */}
+                            <div className="w-full mb-10 overflow-hidden bg-slate-900/40 border-y border-white/5 backdrop-blur-md py-3 relative group">
+                                <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10" />
+                                <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10" />
+
+                                <motion.div
+                                    animate={{ x: [0, -1200] }}
+                                    transition={{
+                                        duration: 35,
+                                        repeat: Infinity,
+                                        ease: "linear",
+                                    }}
+                                    className="flex whitespace-nowrap gap-16 items-center"
+                                >
+                                    {[1, 2].map((i) => (
+                                        <div key={i} className="flex items-center gap-12">
+                                            <span className="flex items-center gap-3">
+                                                <span className="px-2 py-0.5 rounded bg-yellow-500 text-slate-950 text-[10px] font-black uppercase tracking-tighter">Prime</span>
+                                                <span className="text-white font-bold text-sm tracking-wide">TradeLikeKK Prime</span>
+                                            </span>
+                                            <span className="text-slate-400 font-medium text-sm flex items-center gap-2">
+                                                <span className="text-yellow-500 text-lg">👉</span> One premium trade call daily at 3:30 PM
+                                            </span>
+                                            <span className="text-slate-400 font-medium text-sm flex items-center gap-2">
+                                                <span className="text-yellow-500 text-lg">👉</span> Minimum capital required: <span className="text-white font-bold">₹1.7 Lakhs</span>
+                                            </span>
+                                            <span className="text-slate-400 font-medium text-sm flex items-center gap-2">
+                                                <span className="text-yellow-500 text-lg">👉</span> No hero-zero or gambling strategies — only disciplined trading
+                                            </span>
+                                            <span className="text-slate-400 font-medium text-sm flex items-center gap-2">
+                                                <span className="text-yellow-500 text-lg">👉</span> No risky stunts — focus on practical and consistent returns
+                                            </span>
+                                            <span className="text-slate-300 font-bold text-sm flex items-center gap-2">
+                                                <span className="text-orange-500 text-lg">👉</span> Join only if you are <span className="text-orange-500 underline decoration-2 underline-offset-4 uppercase italic">serious</span> about trading
+                                            </span>
+                                        </div>
+                                    ))}
+                                </motion.div>
+                            </div>
+
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-yellow-400 text-sm font-semibold mb-6 backdrop-blur-sm">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
