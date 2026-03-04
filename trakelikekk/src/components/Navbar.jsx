@@ -45,9 +45,14 @@ const Navbar = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full" />
                             </a>
                         ))}
-                        <button className="px-5 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-white text-sm font-bold shadow-lg hover:shadow-yellow-500/30 transform hover:-translate-y-0.5 transition-all">
+                        <a
+                            href="https://t.me/TradeLike_KK?text=Hello%20TradeLikeKK%2C%20I%20am%20interested%20in%20Joining%20Premium%20Membership."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-orange-600 text-white text-sm font-bold shadow-lg hover:shadow-yellow-500/30 transform hover:-translate-y-0.5 transition-all text-center"
+                        >
                             Join Premium
-                        </button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -84,9 +89,14 @@ const Navbar = () => {
                                 </a>
                             ))}
                             <div className="pt-4">
-                                <button className="w-full px-5 py-3 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-bold shadow-lg">
+                                <a
+                                    href="https://t.me/TradeLike_KK?text=Hello%20TradeLikeKK%2C%20I%20am%20interested%20in%20Joining%20Premium%20Membership."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full px-5 py-3 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-bold shadow-lg block text-center"
+                                >
                                     Join Premium
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </motion.div>

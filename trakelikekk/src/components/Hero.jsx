@@ -76,22 +76,27 @@ const Hero = () => {
                                 #1 Platform for Delta Exchange
                             </div>
 
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+                            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.2] mb-6">
                                 Master Crypto with <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600">
                                     TradeLikeKK
                                 </span>
                             </h1>
 
-                            <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                                Unlock the power of <span className="text-white font-semibold">Delta Exchange</span>. Get expert insights, algo-trading strategies, and real-time signals for Bitcoin & Ethereum futures.
+                            <p className="text-sm md:text-base text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal opacity-80">
+                                Unlock the power of <span className="text-white font-medium">Delta Exchange</span>. Get expert insights, algo-trading strategies, and real-time signals for Bitcoin & Ethereum futures.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl font-bold text-white shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+                                <a
+                                    href="https://wa.me/917205912690?text=Hello%20TradeLikeKK%2C%20I%20am%20interested%20in%20trading."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl font-bold text-white shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+                                >
                                     Start Trading
                                     <ArrowRight className="w-5 h-5" />
-                                </button>
+                                </a>
                                 <a
                                     href="https://www.delta.exchange/app/futures/markets"
                                     target="_blank"

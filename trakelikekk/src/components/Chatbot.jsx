@@ -79,10 +79,10 @@ const Chatbot = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all ${isOpen ? 'bg-slate-800 text-white' : 'bg-gradient-to-tr from-yellow-500 to-orange-600 text-white'
+                className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all ${isOpen ? 'bg-slate-800 text-white' : 'bg-gradient-to-tr from-yellow-500 to-orange-600 text-white'
                     }`}
             >
-                {isOpen ? <X className="w-8 h-8" /> : <MessageSquare className="w-8 h-8" />}
+                {isOpen ? <X className="w-6 h-6 md:w-8 md:h-8" /> : <MessageSquare className="w-6 h-6 md:w-8 md:h-8" />}
                 {!isOpen && (
                     <span className="absolute -top-1 -right-1 flex h-4 w-4">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
@@ -98,7 +98,7 @@ const Chatbot = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 20, transformOrigin: 'bottom right' }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="absolute bottom-20 right-0 w-[350px] sm:w-[400px] max-h-[600px] bg-slate-900 border border-white/10 rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden backdrop-blur-xl"
+                        className="absolute bottom-20 right-0 w-[calc(100vw-2rem)] sm:w-[400px] max-h-[600px] bg-slate-900 border border-white/10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden backdrop-blur-xl"
                     >
                         {/* Header */}
                         <div className="bg-white/5 border-b border-white/5 p-6 flex items-center gap-4">

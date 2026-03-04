@@ -4,9 +4,14 @@
  */
 
 // Local & Production API Configuration
-const API_URL = (typeof window !== 'undefined' && window.location.hostname === 'localhost')
-    ? "http://localhost:3001/api/send-email"
-    : "/api/send-email";
+const API_URL = (() => {
+    if (typeof window === 'undefined') return "/api/send-email";
+    const host = window.location.hostname;
+    // If running on localhost or 127.0.0.1, point to the dedicated backend port
+    return (host === 'localhost' || host === '127.0.0.1')
+        ? `http://${host}:3001/api/send-email`
+        : "/api/send-email";
+})();
 
 /**
  * Generates a unique serial number for registration.

@@ -32,9 +32,13 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+/**
+ * Professional Template Generator
+ */
 const getEmailTemplate = (name, details, type = 'workshop', isForAdmin = false) => {
     const brandColor = "#f59e0b"; // Yellow-500
 
+    // Determine Content based on Type
     let title, subtitle, detailsHtml, ctaText;
 
     if (type === 'workshop') {
@@ -46,6 +50,16 @@ const getEmailTemplate = (name, details, type = 'workshop', isForAdmin = false) 
         detailsHtml = `
             <tr><td style="padding: 8px 0; color: #64748b;">Serial No:</td><td style="color: #1e293b; font-weight: bold;">${details.serialNo}</td></tr>
             <tr><td style="padding: 8px 0; color: #64748b;">Time Slot:</td><td style="color: #d97706; font-weight: bold;">${details.slot}</td></tr>
+        `;
+    } else if (type === 'plan') {
+        title = isForAdmin ? "New Plan Subscription Inquiry" : "Welcome to your Premium Trading Journey!";
+        subtitle = isForAdmin
+            ? `A new user is interested in subscribing to a plan.`
+            : `Hi ${name}, thank you for your interest in joining the TradeLikeKK professional trading community.`;
+        ctaText = "Go to Member Dashboard";
+        detailsHtml = `
+            <tr><td style="padding: 8px 0; color: #64748b;">Selected Plan:</td><td style="color: #d97706; font-weight: bold;">${details.purpose.replace('Subscription Plan: ', '')}</td></tr>
+            <tr><td style="padding: 8px 0; color: #64748b;">Phone:</td><td style="color: #1e293b; font-weight: bold;">${details.phone}</td></tr>
         `;
     } else {
         title = isForAdmin ? "New Inquiry Received" : "Welcome to the TradeLikeKK Family!";
@@ -102,7 +116,10 @@ const getEmailTemplate = (name, details, type = 'workshop', isForAdmin = false) 
 
 app.post('/api/send-email', async (req, res) => {
     const { name, email, serialNo, slot, phone, purpose } = req.body;
-    const type = (serialNo && slot) ? 'workshop' : (phone ? 'chatbot' : 'newsletter');
+
+    const type = (serialNo && slot) ? 'workshop' :
+        (purpose && purpose.startsWith('Subscription Plan:')) ? 'plan' :
+            (phone ? 'chatbot' : 'newsletter');
 
     try {
         await transporter.sendMail({
