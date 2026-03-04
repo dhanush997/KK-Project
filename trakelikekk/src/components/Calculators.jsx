@@ -113,15 +113,15 @@ const Calculators = () => {
                                                 type="number"
                                                 value={amount}
                                                 onChange={(e) => setAmount(Number(e.target.value))}
-                                                className="bg-white/5 pl-7 pr-3 py-2 rounded-xl border border-white/10 text-yellow-500 font-bold w-32 focus:outline-none focus:border-yellow-500/50 transition-all text-right"
+                                                className="bg-white/5 pl-7 pr-3 py-2 rounded-xl border border-white/10 text-yellow-500 font-bold w-40 focus:outline-none focus:border-yellow-500/50 transition-all text-right"
                                             />
                                         </div>
                                     </div>
                                     <input
                                         type="range"
-                                        min={calcType === 'sip' ? 500 : 5000}
-                                        max={calcType === 'sip' ? 100000 : 1000000}
-                                        step={calcType === 'sip' ? 500 : 5000}
+                                        min={calcType === 'sip' ? 500 : 10000}
+                                        max={calcType === 'sip' ? 1000000 : 10000000}
+                                        step={calcType === 'sip' ? 500 : 10000}
                                         value={amount}
                                         onChange={(e) => setAmount(Number(e.target.value))}
                                         className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-yellow-500"
